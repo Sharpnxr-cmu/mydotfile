@@ -5,6 +5,9 @@ alias tls="tmux ls"
 alias tkill="tmux kill-session -t"
 alias tkillall="tmux kill-server"
 
+# translator
+alias tranz="trans :zh"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
