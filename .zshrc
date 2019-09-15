@@ -127,7 +127,10 @@ export PATH="$PATH:/usr/local/mysql/bin"
 export PATH="/anaconda2/bin:$PATH"
 
 # Vim
-export PATH="/usr/local/Cellar/vim/8.1.2000:$PATH "
+export PATH="/usr/local/Cellar/vim/8.1.2000:$PATH"
+
+# Translator
+export PATH="/usr/local/Cellar/:$PATH"
 
 # zsh-syntax-highlighting
 # Must be the last line
