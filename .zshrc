@@ -141,3 +141,6 @@ export PATH="/usr/local/Cellar/:$PATH"
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval $(thefuck --alias)
+
+# vim-mode
+bindkey -v
