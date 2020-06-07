@@ -1,0 +1,9 @@
+[user]
+	name = Xinrui Nie
+	email = xinruin@andrew.cmu.edu
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false

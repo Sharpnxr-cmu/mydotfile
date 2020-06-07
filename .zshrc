@@ -144,3 +144,5 @@ eval $(thefuck --alias)
 
 # vim-mode
 bindkey -v
+
+alias gdiff="git difftool"
