@@ -73,3 +73,16 @@ set expandtab
 set smartindent
 set nowrap
 set noswapfile
+
+" Change the resize size
+nnoremap <C-w>+ :resize +2<CR>
+nnoremap <C-w>- :resize -2<CR>
+nnoremap <C-w>< :vertical:resize -2<CR>
+nnoremap <C-w>> :vertical:resize +2<CR>
+
+if bufwinnr(1)
+    map + <C-W>+
+    map - <C-W>-
+    map < <C-W><
+    map > <C-W>>
+endif
