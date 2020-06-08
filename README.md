@@ -21,6 +21,7 @@ To install all plugins
 1. `vim ~/.vimrc`
 2. `:PlugInstall`
 3. Note the plugin `YouCompleteMe` needs some extra operations to finish the [installation](https://github.com/ycm-core/YouCompleteMe#installation)
+4. Note `Ack` needs `brew install ack`
 
 To install a new plugin:
 

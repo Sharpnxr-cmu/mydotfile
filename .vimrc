@@ -118,6 +118,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'djoshea/vim-autoread'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -164,6 +165,9 @@ let g:ctrlp_show_hidden = 1
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
-nnoremap <silent> <leader>rr :YcmCompleter RefactorRename<space>
+nnoremap <leader>rr :YcmCompleter RefactorRename<space>
 nnoremap <silent> <leader>gt :YcmCompleter GetType<CR>
 nnoremap <silent> <leader>gT :YcmCompleter GoToType<CR>
+
+"ack
+nnoremap <leader>a :Ack!<space>
