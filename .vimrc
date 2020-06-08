@@ -74,15 +74,84 @@ set smartindent
 set nowrap
 set noswapfile
 
-" Change the resize size
-nnoremap <C-w>+ :resize +2<CR>
-nnoremap <C-w>- :resize -2<CR>
-nnoremap <C-w>< :vertical:resize -2<CR>
-nnoremap <C-w>> :vertical:resize +2<CR>
+" Buffer switch
+nnoremap gb :bn<cr>
+nnoremap gB :bp<cr>
+nnoremap bd :bp<cr>:bd #<cr>
 
+let mapleader = " "
+
+" Window switch
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+" It turns out I will never use horizontal split window in vim, so just make
+" +/- change the vertical window size
+nnoremap <silent> <leader>+ :vertical resize +5<CR>
+nnoremap <silent> <leader>- :vertical resize -5<CR>
 if bufwinnr(1)
-    map + <C-W>+
-    map - <C-W>-
-    map < <C-W><
-    map > <C-W>>
+    map + <leader>+
+    map - <leader>-
+endif 
+
+
+" Install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ctrlpvim/ctrlp.vim'
+
+call plug#end()
+
+" gruvbox
+colorscheme gruvbox
+set background=dark
+
+" airline
+let g:airline_powerline_fonts = 1
+" Remove file type
+let g:airline_section_x = ''
+" Remove empty sections
+let g:airline_skip_empty_sections = 1
+" Enable tabline. When there is only one tab, all buffers will be shown;
+" otherwise, only tabs will be shown
+let g:airline#extensions#tabline#enabled = 1
+" Remove tab number before filename
+let g:airline#extensions#tabline#show_tab_nr = 0
+" Remove useless info at top right
+let g:airline#extensions#tabline#tab_label = ''
+let g:airline#extensions#tabline#show_splits = 0
+
+" nerdtree
+nnoremap <silent> <leader>n :NERDTree<CR>
+" Show dot files
+let NERDTreeShowHidden = 1
+" Automatically open nerdtree when opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" Close nerdtree if it is the only left window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Remap s to v to be consistent with ctrlp
+let NERDTreeMapOpenVSplit = 'v'
+
+" ctrlp
+nnoremap <silent> <leader>p :CtrlP<CR>
+" Disable cache (fast enough)
+let g:ctrlp_use_caching = 0
+" Show dot files
+let g:ctrlp_show_hidden = 1
