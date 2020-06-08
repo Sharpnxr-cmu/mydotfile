@@ -115,6 +115,9 @@ Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'djoshea/vim-autoread'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -139,8 +142,9 @@ let g:airline#extensions#tabline#show_splits = 0
 
 " nerdtree
 nnoremap <silent> <leader>n :NERDTree<CR>
-" Show dot files
+" Show some dot files
 let NERDTreeShowHidden = 1
+let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$', '\.DS_Store']
 " Automatically open nerdtree when opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
@@ -155,3 +159,11 @@ nnoremap <silent> <leader>p :CtrlP<CR>
 let g:ctrlp_use_caching = 0
 " Show dot files
 let g:ctrlp_show_hidden = 1
+
+"youcompleteme
+nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
+nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <silent> <leader>rr :YcmCompleter RefactorRename<space>
+nnoremap <silent> <leader>gt :YcmCompleter GetType<CR>
+nnoremap <silent> <leader>gT :YcmCompleter GoToType<CR>
