@@ -1,4 +1,4 @@
 source ~/.vimrc
+
 set surround
 set commentary
-set easymotion

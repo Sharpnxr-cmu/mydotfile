@@ -119,6 +119,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'djoshea/vim-autoread'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -169,5 +170,13 @@ nnoremap <leader>rr :YcmCompleter RefactorRename<space>
 nnoremap <silent> <leader>gt :YcmCompleter GetType<CR>
 nnoremap <silent> <leader>gT :YcmCompleter GoToType<CR>
 
-"ack
+" ack
 nnoremap <leader>a :Ack!<space>
+
+" easymotion
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+" smartcase
+let g:EasyMotion_smartcase = 1
+map <leader>w <Plug>(easymotion-bd-f2)
+nmap <leader>w <Plug>(easymotion-overwin-f2)
