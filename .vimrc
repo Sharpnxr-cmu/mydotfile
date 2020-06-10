@@ -198,6 +198,8 @@ let g:ycm_always_populate_location_list = 1
 " Highlight all function calls
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
+" Auto import
+let g:go_fmt_command = "goimports"
 
 " ack
 nnoremap <leader>a :Ack!<space>
