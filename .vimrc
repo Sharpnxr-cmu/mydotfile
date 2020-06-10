@@ -127,7 +127,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
-Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -140,12 +139,12 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'milkypostman/vim-togglelist'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
-" gruvbox
-colorscheme gruvbox
-set background=dark
+colorscheme codedark
+let g:airline_theme = 'codedark'
 
 " airline
 let g:airline_powerline_fonts = 1
