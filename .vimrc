@@ -194,6 +194,11 @@ autocmd User YcmQuickFixOpened autocmd! ycmquickfix WinLeave
 " Populate the diagnostic message in the locationlist
 let g:ycm_always_populate_location_list = 1
 
+" vim-go
+" Highlight all function calls
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+
 " ack
 nnoremap <leader>a :Ack!<space>
 
