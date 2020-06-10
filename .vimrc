@@ -74,10 +74,20 @@ set smartindent
 set nowrap
 set noswapfile
 
+" Better search display
+nnoremap <silent> n n:call <SID>MaybeMiddle()<CR>
+nnoremap <silent> N N:call <SID>MaybeMiddle()<CR>
+" If cursor is in first or last line of window, scroll to middle line.
+function s:MaybeMiddle()
+    if winline() == 1 || winline() == winheight(0)
+        normal! zz
+    endif
+endfunction
+
 " Buffer switch
 nnoremap gb :bn<cr>
 nnoremap gB :bp<cr>
-nnoremap bd :bp<cr>:bd #<cr>
+nnoremap gd :bp<cr>:bd #<cr>
 
 let mapleader = " "
 
@@ -95,6 +105,15 @@ if bufwinnr(1)
     map - <leader>-
 endif 
 
+" Quickfix window and Location list navigation
+nmap <C-j> :cnext<CR>
+nmap <C-k> :cprev<CR>
+" Note the following two keys only work on Mac
+nmap ∆ :lnext<CR>
+nmap ˚ :lprev<CR>
+
+" Remove esc delay
+set timeoutlen=1000 ttimeoutlen=0
 
 " Install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -120,6 +139,7 @@ Plug 'djoshea/vim-autoread'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'milkypostman/vim-togglelist'
 
 call plug#end()
 
@@ -162,13 +182,17 @@ let g:ctrlp_use_caching = 0
 " Show dot files
 let g:ctrlp_show_hidden = 1
 
-"youcompleteme
+" youcompleteme
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>rr :YcmCompleter RefactorRename<space>
 nnoremap <silent> <leader>gt :YcmCompleter GetType<CR>
 nnoremap <silent> <leader>gT :YcmCompleter GoToType<CR>
+" Don't auto-quit the quickfix window
+autocmd User YcmQuickFixOpened autocmd! ycmquickfix WinLeave
+" Populate the diagnostic message in the locationlist
+let g:ycm_always_populate_location_list = 1
 
 " ack
 nnoremap <leader>a :Ack!<space>
@@ -180,3 +204,8 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 map <leader>w <Plug>(easymotion-bd-f2)
 nmap <leader>w <Plug>(easymotion-overwin-f2)
+
+" togglelsit
+let g:toggle_list_no_mappings = 1
+nmap <script> <silent> <leader>t :call ToggleLocationList()<CR>
+nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
