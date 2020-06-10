@@ -163,7 +163,7 @@ let g:airline#extensions#tabline#tab_label = ''
 let g:airline#extensions#tabline#show_splits = 0
 
 " nerdtree
-nnoremap <silent> <leader>n :NERDTree<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 " Show some dot files
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$', '\.DS_Store']
