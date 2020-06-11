@@ -141,6 +141,9 @@ Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tomasiser/vim-code-dark'
+Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " vim-devicons must be the very last one
 Plug 'ryanoasis/vim-devicons'
 
@@ -199,6 +202,15 @@ let g:ycm_always_populate_location_list = 1
 " Auto-close the preview window
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+" Make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " vim-go
 " Highlight all function calls
