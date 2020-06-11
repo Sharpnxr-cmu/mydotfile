@@ -196,6 +196,9 @@ nnoremap <silent> <leader>gT :YcmCompleter GoToType<CR>
 autocmd User YcmQuickFixOpened autocmd! ycmquickfix WinLeave
 " Populate the diagnostic message in the locationlist
 let g:ycm_always_populate_location_list = 1
+" Auto-close the preview window
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " vim-go
 " Highlight all function calls
