@@ -132,6 +132,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'djoshea/vim-autoread'
@@ -140,11 +141,14 @@ Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tomasiser/vim-code-dark'
+" vim-devicons must be the very last one
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
 colorscheme codedark
 let g:airline_theme = 'codedark'
+set encoding=UTF-8
 
 " airline
 let g:airline_powerline_fonts = 1
