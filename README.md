@@ -1,6 +1,9 @@
 # mydotfile
 
-All files (except iTerm2-profile.json, which needs to be imported into iTerm2) can be directly copied to ~/ and will be effective. Remember first install zsh and oh-my-zsh (https://xiaozhou.net/learn-the-command-line-iterm-and-zsh-2017-06-23.html)
+* ITerm2-profile.json needs to be imported into iTerm2
+* coc-settings.json should be copied to ~/.vim/
+* everything else can be directly copied to ~/ and will be effective
+* Remember first install zsh and oh-my-zsh (https://xiaozhou.net/learn-the-command-line-iterm-and-zsh-2017-06-23.html)
 
 ### font
 
