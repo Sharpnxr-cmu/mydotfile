@@ -20,14 +20,16 @@ All files (except iTerm2-profile.json, which needs to be imported into iTerm2) c
 * shellcheck
 * tldr
 * tmux
+* ack
 
 ### vim plugin
 To install all plugins
 
 1. `vim ~/.vimrc`
 2. `:PlugInstall`
-3. Note the plugin `YouCompleteMe` needs some extra operations to finish the [installation](https://github.com/ycm-core/YouCompleteMe#installation)
-4. Note `Ack` needs `brew install ack`
+3. [coc](https://github.com/neoclide/coc.nvim) needs to install the needed language-support plugins
+4. [vim-go](https://github.com/fatih/vim-go) needs to install the go binary
+5.  `Ack` needs `brew install ack`
 
 To install a new plugin:
 
