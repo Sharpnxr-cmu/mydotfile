@@ -1,10 +1,14 @@
 {
     "list.normalMappings": {
         "t": "action:tabe",
-        "v": "action:vsplit"
+        "v": "action:vsplit",
+        "o": "action:open",
+        "p": "action:preview"
     },
     "list.insertMappings": {
         "<C-t>": "action:tabe",
-        "<C-v>": "action:vsplit"
+        "<C-v>": "action:vsplit",
+        "<C-o>": "action:open",
+        "<C-p>": "action:preview"
     }
 }

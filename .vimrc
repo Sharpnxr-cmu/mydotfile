@@ -143,8 +143,10 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 " Close nerdtree if it is the only left window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Remap s to v to be consistent with other plugins
+" Remap to be consistent with other plugins
 let NERDTreeMapOpenVSplit = 'v'
+let NERDTreeMapPreview = 'p'
+let NERDTreeMapQuit = '<Esc>'
 
 " Ctrlp
 nnoremap <silent> <leader>p :CtrlP<CR>
@@ -171,6 +173,8 @@ let g:go_textobj_enabled = 0
 
 " Ack
 nnoremap <leader>a :Ack!<space>
+" Remap to be consistent with other plugins
+let g:ack_mappings = { "p": "<CR><C-w>j" , "<Esc>": ":q<CR>"}
 
 " Easymotion
 " Disable default mappings
@@ -223,8 +227,8 @@ nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <leader>rr <Plug>(coc-rename)
 nmap <leader>gf <Plug>(coc-fix-current)
-nnoremap <silent><nowait> <leader>sd :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <leader>so :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>sd :<C-u>CocList --auto-preview diagnostics<cr>
+nnoremap <silent><nowait> <leader>so :<C-u>CocList --auto-preview outline<cr>
 " Highlight the symbol and its references when holding the cursor
 highlight CocHighlightText ctermbg=59 guibg=#5f5f5f
 autocmd CursorHold * silent call CocActionAsync('highlight')
