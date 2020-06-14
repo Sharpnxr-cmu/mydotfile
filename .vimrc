@@ -112,6 +112,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'ap/vim-css-color'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'airblade/vim-gitgutter'
 " Vim-devicons must be the very last one
 Plug 'ryanoasis/vim-devicons'
 
@@ -122,8 +123,6 @@ colorscheme codedark
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'codedark'
-" Remove file type section
-let g:airline_section_x = ''
 " Remove empty sections
 let g:airline_skip_empty_sections = 1
 " Enable tabline. When there is only one tab, all buffers will be shown;
@@ -134,6 +133,9 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 " Remove useless info at top right
 let g:airline#extensions#tabline#tab_label = ''
 let g:airline#extensions#tabline#show_splits = 0
+" Show gitgutter info
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
 
 " Nerdtree
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>
@@ -252,3 +254,22 @@ command! -nargs=0 Import :call CocAction('runCommand', 'editor.action.organizeIm
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 highlight IncSearchMatch ctermbg=59 guibg=#5f5f5f
+
+" Gitgutter
+" Toggle gitgutter
+nnoremap <silent> <leader>sc :GitGutterToggle<CR>
+" Disable by default
+let g:gitgutter_enabled = 0
+" Disable default key bindings
+let g:gitgutter_map_keys = 0
+" Display line highlighting
+let g:gitgutter_highlight_lines = 1
+" Remove the limitation of changes
+let g:gitgutter_max_signs = -1
+" Clobber other signs
+let g:gitgutter_sign_allow_clobber = 1
+" Better highlight color
+highlight DiffAdd    guifg=#000000 ctermfg=16 guibg=#009900 ctermbg=2
+highlight DiffChange guifg=#000000 ctermfg=16 guibg=#bbbb00 ctermbg=3
+highlight DiffDelete guifg=#000000 ctermfg=16 guibg=#ff2222 ctermbg=1
+highlight DiffText   guifg=#000000 ctermfg=16 guibg=#87afd7 ctermbg=110
