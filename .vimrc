@@ -174,6 +174,8 @@ let g:go_fmt_command = "goimports"
 let g:go_def_mapping_enabled = 0
 let g:go_doc_keywordprg_enabled = 0
 let g:go_textobj_enabled = 0
+" Use quickfix window only
+let g:go_list_type = "quickfix"
 
 " Ack
 nnoremap <leader>a :Ack!<space>
@@ -273,3 +275,6 @@ highlight DiffAdd    guifg=#000000 ctermfg=16 guibg=#608b4e ctermbg=65
 highlight DiffChange guifg=#000000 ctermfg=16 guibg=#d7ba7d ctermbg=179
 highlight DiffDelete guifg=#000000 ctermfg=16 guibg=#fb0101 ctermbg=9  
 highlight DiffText   guifg=#000000 ctermfg=16 guibg=#9cdcfe ctermbg=117
+" Jump between hunks
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
