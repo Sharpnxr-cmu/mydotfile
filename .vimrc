@@ -16,7 +16,6 @@ set backspace=indent,eol,start
 set hidden
 set ignorecase
 set smartcase
-set incsearch
 " Unbind some useless/annoying default key bindings.
 nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 " Disable audible bell because it's annoying.
@@ -50,6 +49,7 @@ endfunctio
 set timeoutlen=1000 ttimeoutlen=0
 set encoding=UTF-8
 set updatetime=300
+set autoread
 
 " ---------------------------------------------------------------------------------------
 " Basic Remappings
@@ -100,7 +100,6 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'djoshea/vim-autoread'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
@@ -110,6 +109,9 @@ Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'haya14busa/incsearch.vim'
+Plug 'ap/vim-css-color'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 " Vim-devicons must be the very last one
 Plug 'ryanoasis/vim-devicons'
 
@@ -245,3 +247,8 @@ omap ac <Plug>(coc-classobj-a)
 command! -nargs=0 Format :call CocAction('format')
 " Use :Import to organize imports of current buffer
 command! -nargs=0 Import :call CocAction('runCommand', 'editor.action.organizeImport')
+
+" Incsearch
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+highlight IncSearchMatch ctermbg=59 guibg=#5f5f5f
