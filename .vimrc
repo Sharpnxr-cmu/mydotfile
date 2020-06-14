@@ -269,7 +269,7 @@ let g:gitgutter_max_signs = -1
 " Clobber other signs
 let g:gitgutter_sign_allow_clobber = 1
 " Better highlight color
-highlight DiffAdd    guifg=#000000 ctermfg=16 guibg=#009900 ctermbg=2
-highlight DiffChange guifg=#000000 ctermfg=16 guibg=#bbbb00 ctermbg=3
-highlight DiffDelete guifg=#000000 ctermfg=16 guibg=#ff2222 ctermbg=1
-highlight DiffText   guifg=#000000 ctermfg=16 guibg=#87afd7 ctermbg=110
+highlight DiffAdd    guifg=#000000 ctermfg=16 guibg=#608b4e ctermbg=65 
+highlight DiffChange guifg=#000000 ctermfg=16 guibg=#d7ba7d ctermbg=179
+highlight DiffDelete guifg=#000000 ctermfg=16 guibg=#fb0101 ctermbg=9  
+highlight DiffText   guifg=#000000 ctermfg=16 guibg=#9cdcfe ctermbg=117
