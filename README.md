@@ -45,3 +45,5 @@ To install a new plugin:
 
 ### tmux plugin
 There is no tmux plugin XD!
+
+Note: If using tmux locally and remotely at the same time, `<C-a>` is the prefix of local, `<C-aa>` is the prefix of remote. So if it is needed to use tmux remotely, it may be more convenient to not use tmux locally
