@@ -118,17 +118,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Setting PATH for Python 2.7
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-
-# Setting PATH for Python 3.6
-export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-
 # Setting PATH for MySQL
 export PATH="$PATH:/usr/local/mysql/bin"
-
-# added by Anaconda2 5.1.0 installer
-export PATH="/anaconda2/bin:$PATH"
 
 # Vim
 export PATH="/usr/local/Cellar/vim/8.1.2000:$PATH"
